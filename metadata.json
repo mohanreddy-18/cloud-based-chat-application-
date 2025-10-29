@@ -1,0 +1,5 @@
+{
+  "name": "Copy of Cloud-Based Chat Application",
+  "description": "A real-time, cloud-based chat application built with React and TypeScript, designed to connect to an AWS WebSocket backend. It features a modern, responsive UI for a seamless messaging experience.",
+  "requestFramePermissions": []
+}
