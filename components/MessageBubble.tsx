@@ -19,9 +19,9 @@ const MessageBubble: React.FC<MessageBubbleProps> = ({ message, isOwnMessage }) 
   }
 
   const alignment = isOwnMessage ? 'justify-end' : 'justify-start';
-  const bubbleColor = isOwnMessage ? 'bg-primary' : 'bg-gray-600';
+  const bubbleColor = isOwnMessage ? 'bg-blue-600' : 'bg-gray-600';
   const bubblePosition = isOwnMessage ? 'rounded-br-none' : 'rounded-bl-none';
-  const textColor = isOwnMessage ? 'text-white' : 'text-gray-200';
+  const textColor = 'text-white';
   const time = new Date(message.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
 
   return (
