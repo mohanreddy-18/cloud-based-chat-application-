@@ -2,9 +2,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { ChatMessage, ConnectionStatus } from '../types';
 
-// IMPORTANT: Replace this with your actual AWS API Gateway WebSocket URL.
-// The URL should look something like: wss://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/production
-const WEBSOCKET_URL = 'wss://your-aws-websocket-api-url.com';
+const WEBSOCKET_URL = process.env.VITE_WEBSOCKET_URL || 'ws://localhost:8080';
 
 export const useChatWebSocket = (username: string) => {
   const [messages, setMessages] = useState<ChatMessage[]>([]);
@@ -13,21 +11,6 @@ export const useChatWebSocket = (username: string) => {
 
   useEffect(() => {
     if (!username) return;
-
-    // Acknowledge the user that we are using a placeholder URL if it's not changed.
-    if (WEBSOCKET_URL === 'wss://your-aws-websocket-api-url.com') {
-      console.warn("Using placeholder WebSocket URL. Please replace with your actual AWS WebSocket URL in hooks/useChatWebSocket.ts");
-      // Add a friendly message to the chat window for visibility
-      setMessages([{
-        id: 'warning-1',
-        username: 'System',
-        text: 'Welcome! Please note this is a demo. To connect to your own backend, update the WEBSOCKET_URL in hooks/useChatWebSocket.ts.',
-        timestamp: Date.now(),
-        type: 'notification',
-      }]);
-      setConnectionStatus(ConnectionStatus.Disconnected);
-      return;
-    }
 
     const socket = new WebSocket(WEBSOCKET_URL);
     socketRef.current = socket;

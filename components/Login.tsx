@@ -17,10 +17,10 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center h-full bg-gray-800 p-8">
+    <div className="flex flex-col items-center justify-center h-full bg-gray-800 p-8 text-white">
       <div className="w-full max-w-sm text-center">
-        <h1 className="text-4xl font-bold text-white mb-2">Welcome to Cloud Chat</h1>
-        <p className="text-gray-400 mb-8">Enter your name to join the conversation.</p>
+        <h1 className="text-4xl font-bold mb-2">Welcome to Our Chat</h1>
+        <p className="text-gray-400 mb-8">Please enter your name to join the conversation.</p>
         <form onSubmit={handleSubmit} className="w-full">
           <div className="relative mb-4">
             <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
@@ -31,14 +31,14 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               placeholder="Your Name"
-              className="w-full p-3 pl-10 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary"
+              className="w-full p-3 pl-10 bg-gray-700 border border-gray-600 rounded-lg placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
               autoFocus
             />
           </div>
           <button
             type="submit"
             disabled={!username.trim()}
-            className="w-full bg-primary text-white font-bold py-3 px-4 rounded-lg hover:bg-primary-hover focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-primary disabled:bg-gray-600 disabled:cursor-not-allowed transition-colors duration-200"
+            className="w-full bg-blue-600 font-bold py-3 px-4 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-blue-500 disabled:bg-gray-600 disabled:cursor-not-allowed transition-colors duration-200"
           >
             Join Chat
           </button>

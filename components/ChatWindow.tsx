@@ -20,7 +20,7 @@ const ChatWindow: React.FC<ChatWindowProps> = ({ messages, username }) => {
   }, [messages]);
 
   return (
-    <div className="flex-1 p-4 overflow-y-auto">
+    <div className="flex-1 p-4 overflow-y-auto bg-gray-900">
         <div className="flex flex-col space-y-2">
             {messages.map((msg) => (
                 <MessageBubble key={msg.id} message={msg} isOwnMessage={msg.username === username} />
